@@ -1,0 +1,462 @@
+--------------------------------------------------------
+-- Archivo creado  - martes-noviembre-29-2022   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence SECUENCIA_ALQUILER
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PROYECTO"."SECUENCIA_ALQUILER"  MINVALUE 1 MAXVALUE 100 INCREMENT BY 1 START WITH 81 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence SECUENCIA_COLOR
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PROYECTO"."SECUENCIA_COLOR"  MINVALUE 1 MAXVALUE 100 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence SECUENCIA_MARCA
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PROYECTO"."SECUENCIA_MARCA"  MINVALUE 1 MAXVALUE 100 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Table ALQUILERES
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO"."ALQUILERES" 
+   (	"IDALQUILER" NUMBER(*,0), 
+	"IDCLIENTE" VARCHAR2(10 BYTE), 
+	"PLACA" VARCHAR2(10 BYTE), 
+	"FECHAENTREGA" DATE, 
+	"FECHARECEPCION" DATE, 
+	"KMENTREGA" NUMBER, 
+	"KMRECEPCION" NUMBER, 
+	"KMRECORRIDOS" NUMBER, 
+	"VALORKM" NUMBER, 
+	"DESCUENTO" NUMBER, 
+	"TOTAL" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Table CLIENTES
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO"."CLIENTES" 
+   (	"IDCLIENTE" VARCHAR2(10 BYTE), 
+	"NOMBRES" VARCHAR2(20 BYTE), 
+	"TIPOCLIENTE" VARCHAR2(10 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Table COLOR
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO"."COLOR" 
+   (	"IDCOLOR" NUMBER, 
+	"NOMBRECOLOR" VARCHAR2(10 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Table MARCA
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO"."MARCA" 
+   (	"IDMARCA" NUMBER, 
+	"NOMBREMARCA" VARCHAR2(10 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Table VEHICULOS
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO"."VEHICULOS" 
+   (	"PLACA" VARCHAR2(10 BYTE), 
+	"MARCA" NUMBER, 
+	"COLOR" NUMBER, 
+	"KILOMETRAJEACTUAL" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+REM INSERTING into PROYECTO.ALQUILERES
+SET DEFINE OFF;
+Insert into PROYECTO.ALQUILERES (IDALQUILER,IDCLIENTE,PLACA,FECHAENTREGA,FECHARECEPCION,KMENTREGA,KMRECEPCION,KMRECORRIDOS,VALORKM,DESCUENTO,TOTAL) values ('1','123','45SS',to_date('15/11/22','DD/MM/RR'),to_date('27/11/22','DD/MM/RR'),'1000','2000','1000','100','10000','90000');
+Insert into PROYECTO.ALQUILERES (IDALQUILER,IDCLIENTE,PLACA,FECHAENTREGA,FECHARECEPCION,KMENTREGA,KMRECEPCION,KMRECORRIDOS,VALORKM,DESCUENTO,TOTAL) values ('21','12','2s',to_date('08/11/22','DD/MM/RR'),to_date('28/11/22','DD/MM/RR'),'2000','3000','1000','10','0','10000');
+Insert into PROYECTO.ALQUILERES (IDALQUILER,IDCLIENTE,PLACA,FECHAENTREGA,FECHARECEPCION,KMENTREGA,KMRECEPCION,KMRECORRIDOS,VALORKM,DESCUENTO,TOTAL) values ('41','58','12',to_date('16/11/22','DD/MM/RR'),to_date('29/11/22','DD/MM/RR'),'1000','2000','1000','100','10000','90000');
+Insert into PROYECTO.ALQUILERES (IDALQUILER,IDCLIENTE,PLACA,FECHAENTREGA,FECHARECEPCION,KMENTREGA,KMRECEPCION,KMRECORRIDOS,VALORKM,DESCUENTO,TOTAL) values ('61','951','951',to_date('16/11/22','DD/MM/RR'),to_date('29/11/22','DD/MM/RR'),'100','200','100','10','200','800');
+REM INSERTING into PROYECTO.CLIENTES
+SET DEFINE OFF;
+Insert into PROYECTO.CLIENTES (IDCLIENTE,NOMBRES,TIPOCLIENTE) values ('123','Pedro','Ocasional ');
+Insert into PROYECTO.CLIENTES (IDCLIENTE,NOMBRES,TIPOCLIENTE) values ('58','Carlos','Ocasional ');
+Insert into PROYECTO.CLIENTES (IDCLIENTE,NOMBRES,TIPOCLIENTE) values ('456','CAMIL','Contrato');
+Insert into PROYECTO.CLIENTES (IDCLIENTE,NOMBRES,TIPOCLIENTE) values ('951','miguel','Ocasional ');
+Insert into PROYECTO.CLIENTES (IDCLIENTE,NOMBRES,TIPOCLIENTE) values ('12','MANOLO','Contrato');
+REM INSERTING into PROYECTO.COLOR
+SET DEFINE OFF;
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('1','AZUL');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('2','AMARILLO');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('3','VERDE');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('4','ROJO');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('21','ROSADO');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('22','GRIS');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('23','NEGRO');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('24','NARANJA');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('25','MARRON');
+Insert into PROYECTO.COLOR (IDCOLOR,NOMBRECOLOR) values ('26','BLANCO');
+REM INSERTING into PROYECTO.MARCA
+SET DEFINE OFF;
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('1','TOYOYA');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('2','FERRARI');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('3','NISSAN');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('4','MAZDA');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('21','BMW');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('22','AUDI');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('23','LEXUS');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('24','RENAULT');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('25','FORD');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('26','OPEL');
+Insert into PROYECTO.MARCA (IDMARCA,NOMBREMARCA) values ('27','SEAT');
+REM INSERTING into PROYECTO.VEHICULOS
+SET DEFINE OFF;
+Insert into PROYECTO.VEHICULOS (PLACA,MARCA,COLOR,KILOMETRAJEACTUAL) values ('951','1','1','100');
+Insert into PROYECTO.VEHICULOS (PLACA,MARCA,COLOR,KILOMETRAJEACTUAL) values ('45SS','2','2','1000');
+Insert into PROYECTO.VEHICULOS (PLACA,MARCA,COLOR,KILOMETRAJEACTUAL) values ('12','2','2','1000');
+Insert into PROYECTO.VEHICULOS (PLACA,MARCA,COLOR,KILOMETRAJEACTUAL) values ('2s','25','23','2000');
+--------------------------------------------------------
+--  DDL for Index PK_IDALQUILER
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO"."PK_IDALQUILER" ON "PROYECTO"."ALQUILERES" ("IDALQUILER") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Index PK_IDCLIENTE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO"."PK_IDCLIENTE" ON "PROYECTO"."CLIENTES" ("IDCLIENTE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Index PK_PLACA
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO"."PK_PLACA" ON "PROYECTO"."VEHICULOS" ("PLACA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Index PK_IDMARCA
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO"."PK_IDMARCA" ON "PROYECTO"."MARCA" ("IDMARCA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Index PK_IDCOLOR
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO"."PK_IDCOLOR" ON "PROYECTO"."COLOR" ("IDCOLOR") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02" ;
+--------------------------------------------------------
+--  DDL for Trigger SECUENCIA_ALQUILER
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "PROYECTO"."SECUENCIA_ALQUILER" BEFORE INSERT ON alquileres
+FOR EACH ROW
+DECLARE
+
+BEGIN
+
+    SELECT secuencia_alquiler.NEXTVAL INTO :NEW.idalquiler FROM DUAL;
+
+END;
+/
+ALTER TRIGGER "PROYECTO"."SECUENCIA_ALQUILER" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger SECUENCIA_COLOR1
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "PROYECTO"."SECUENCIA_COLOR1" BEFORE INSERT ON color
+FOR EACH ROW
+DECLARE
+
+BEGIN
+
+    SELECT secuencia_color.NEXTVAL INTO :NEW.IdColor FROM DUAL;
+
+END;
+/
+ALTER TRIGGER "PROYECTO"."SECUENCIA_COLOR1" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger SECUENCIA_MARCAS
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "PROYECTO"."SECUENCIA_MARCAS" BEFORE INSERT ON marca
+FOR EACH ROW
+DECLARE
+
+BEGIN
+
+    SELECT secuencia_marca.NEXTVAL INTO :NEW.idmarca FROM DUAL;
+
+END;
+/
+ALTER TRIGGER "PROYECTO"."SECUENCIA_MARCAS" ENABLE;
+--------------------------------------------------------
+--  DDL for Procedure SP_COLOR
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO"."SP_COLOR" (color OUT SYS_REFCURSOR)
+AS
+BEGIN
+  OPEN color FOR SELECT idcolor,nombrecolor from color;
+END sp_color;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure SP_CONSULTAR
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO"."SP_CONSULTAR" (consultar out SYS_REFCURSOR)
+    AS
+    BEGIN 
+        OPEN consultar for select * from alquileres;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure SP_GUARDAR
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO"."SP_GUARDAR" (idalqui int,idcli varchar2,plac varchar2,fechaE DATE,fechaR DATE,kmEntre number,
+            kmRecep number,kmrec number, valork number, descuen number, tot number)
+     IS
+        begin
+            INSERT INTO alquileres(idalquiler,idcliente,placa,fechaentrega,fecharecepcion,kmentrega,kmrecepcion,kmrecorridos, valorkm, descuento,total)
+            VALUES(idalqui,idcli,plac,fechaE,fechaR,kmEntre,kmRecep,kmrec,valork,descuen,tot);
+    END sp_guardar;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure SP_MARCA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO"."SP_MARCA" (marcas OUT SYS_REFCURSOR)
+AS
+BEGIN
+  OPEN marcas FOR SELECT idmarca,nombremarca from marca;
+END sp_marca;
+
+/
+--------------------------------------------------------
+--  DDL for Package GESTION_CLIENTES
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE PACKAGE "PROYECTO"."GESTION_CLIENTES" 
+    as
+    PROCEDURE sp_guardar_c
+        (idc varchar2,nomb varchar2,tipocliente varchar2);
+    PROCEDURE sp_modificar_c
+        (idc varchar2,nomb varchar2,tipocliente varchar2);
+    PROCEDURE sp_eliminar_c(idc varchar2);
+    PROCEDURE sp_consultar_c(consultar OUT SYS_REFCURSOR);
+END GESTION_CLIENTES;
+
+/
+--------------------------------------------------------
+--  DDL for Package GESTION_VEHICULOS
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE PACKAGE "PROYECTO"."GESTION_VEHICULOS" 
+AS
+    PROCEDURE sp_guardar_v
+        (plac varchar2,marc number,color number,kmact number);
+    PROCEDURE sp_modificar_v
+        (plac varchar2,marc number,color number,kmact number);
+    PROCEDURE sp_eliminar_v(plac varchar2);
+    PROCEDURE sp_consultar_v(consultar OUT SYS_REFCURSOR);
+END GESTION_VEHICULOS;
+
+/
+--------------------------------------------------------
+--  DDL for Package Body GESTION_CLIENTES
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE PACKAGE BODY "PROYECTO"."GESTION_CLIENTES" 
+    AS
+    PROCEDURE sp_guardar_c(idc varchar2,nomb varchar2,tipocliente varchar2)
+    IS
+    BEGIN
+        INSERT INTO clientes(idcliente,nombres,tipocliente) 
+        VALUES(idc,nomb,tipocliente);
+    END sp_guardar_c;
+
+    PROCEDURE sp_modificar_c(idc varchar2,nomb varchar2,tipocliente varchar2)
+        AS
+        BEGIN
+            UPDATE clientes
+            SET nombres= nomb,tipocliente= tipocliente 
+            WHERE idcliente=idc;
+    END sp_modificar_c;
+        PROCEDURE sp_eliminar_c(idc varchar2)
+        AS
+        BEGIN
+        DELETE FROM clientes WHERE idcliente = idc;
+    END sp_eliminar_c;
+
+    PROCEDURE sp_consultar_c(consultar out SYS_REFCURSOR)
+        AS
+        BEGIN 
+        OPEN consultar for select * from clientes;
+        END;
+END GESTION_CLIENTES;
+
+/
+--------------------------------------------------------
+--  DDL for Package Body GESTION_VEHICULOS
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE PACKAGE BODY "PROYECTO"."GESTION_VEHICULOS" 
+AS
+    PROCEDURE sp_guardar_v(plac varchar2,marc number,color number,kmact number)
+    IS
+    BEGIN
+        INSERT INTO vehiculos(placa,marca,color, kilometrajeactual) 
+        VALUES(plac,marc,color,kmact);
+    END sp_guardar_v;
+
+    PROCEDURE sp_modificar_v(plac varchar2,marc number,color number,kmact number)
+    AS
+    BEGIN
+        UPDATE vehiculos
+        SET placa= plac,marca= marc, color= color,
+        kilometrajeactual= kmact
+        WHERE placa=plac;
+    END sp_modificar_v;
+    PROCEDURE sp_eliminar_v(plac varchar2)
+        As
+        BEGIN
+            DELETE FROM vehiculos WHERE placa = plac;
+    END sp_eliminar_v;
+
+    PROCEDURE sp_consultar_v(consultar out SYS_REFCURSOR)
+        AS
+        BEGIN 
+            OPEN consultar for select * from vehiculos;
+    END;
+END GESTION_VEHICULOS;
+
+/
+--------------------------------------------------------
+--  Constraints for Table CLIENTES
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO"."CLIENTES" MODIFY ("IDCLIENTE" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."CLIENTES" MODIFY ("NOMBRES" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."CLIENTES" ADD CONSTRAINT "PK_IDCLIENTE" PRIMARY KEY ("IDCLIENTE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COLOR
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO"."COLOR" ADD CONSTRAINT "PK_IDCOLOR" PRIMARY KEY ("IDCOLOR")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MARCA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO"."MARCA" MODIFY ("IDMARCA" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."MARCA" MODIFY ("NOMBREMARCA" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."MARCA" ADD CONSTRAINT "PK_IDMARCA" PRIMARY KEY ("IDMARCA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ALQUILERES
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO"."ALQUILERES" ADD CONSTRAINT "PK_IDALQUILER" PRIMARY KEY ("IDALQUILER")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VEHICULOS
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO"."VEHICULOS" MODIFY ("PLACA" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."VEHICULOS" MODIFY ("MARCA" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."VEHICULOS" MODIFY ("COLOR" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."VEHICULOS" MODIFY ("KILOMETRAJEACTUAL" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO"."VEHICULOS" ADD CONSTRAINT "PK_PLACA" PRIMARY KEY ("PLACA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "CURSO02"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ALQUILERES
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO"."ALQUILERES" ADD CONSTRAINT "FK_CLIENTE_ALQUILER" FOREIGN KEY ("IDCLIENTE")
+	  REFERENCES "PROYECTO"."CLIENTES" ("IDCLIENTE") ENABLE;
+  ALTER TABLE "PROYECTO"."ALQUILERES" ADD CONSTRAINT "FK_PLACA_ALQUILER" FOREIGN KEY ("PLACA")
+	  REFERENCES "PROYECTO"."VEHICULOS" ("PLACA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VEHICULOS
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO"."VEHICULOS" ADD CONSTRAINT "FK_MARCA" FOREIGN KEY ("MARCA")
+	  REFERENCES "PROYECTO"."MARCA" ("IDMARCA") ENABLE;
+  ALTER TABLE "PROYECTO"."VEHICULOS" ADD CONSTRAINT "FK_COLOR" FOREIGN KEY ("COLOR")
+	  REFERENCES "PROYECTO"."COLOR" ("IDCOLOR") ENABLE;
